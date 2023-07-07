@@ -26,6 +26,8 @@ export default {
                     "url('../../public/assets/images/honors_and_accomplishments.webp')",
                 "speaking-opportunities":
                     "url('../../public/assets/images/speaking_opportunities.webp')",
+                "awards-achievements-section":
+                    "url('../../public/assets/images/awards_achievements.webp')",
                 footer: "url('../../public/assets/images/danya_footer.png')",
             },
         },
