@@ -32,13 +32,13 @@ Route::prefix('admin')->name('admin.')->group(function(){
         // Award & Achievement
         Route::controller(AwardAchievementController::class)->group(function () {
             Route::get('/award-achievement', 'index')->name('award_achievement');
-            // Route::get('/change-making-project/data', 'getChangeMakingProject')->name('data_change_making_project');
-            // Route::get('/change-making-project/create', 'create')->name('create_change_making_project');
-            // Route::post('/change-making-project/store', 'store')->name('store_change_making_project');
-            // Route::get('/change-making-project/{id}/edit', 'edit')->name('edit_change_making_project');
-            // Route::post('/change-making-project/{id}/update', 'update')->name('update_change_making_project');
-            // Route::post('/change-making-project/delete/{id}', 'delete')->name('delete_change_making_project');
-            // Route::post('/change-making-project/highlight/{id}', 'set_highlight')->name('highlight_change_making_project');
+            Route::get('/award-achievement/data', 'getAwardAchievement')->name('data_award_achievement');
+            Route::get('/award-achievement/create', 'create')->name('create_award_achievement');
+            Route::post('/award-achievement/store', 'store')->name('store_award_achievement');
+            Route::get('/award-achievement/{id}/edit', 'edit')->name('edit_award_achievement');
+            Route::post('/award-achievement/{id}/update', 'update')->name('update_award_achievement');
+            Route::post('/award-achievement/delete/{id}', 'delete')->name('delete_award_achievement');
+            // Route::post('/award-achievement/highlight/{id}', 'set_highlight')->name('highlight_award_achievement');
         });
     });
 });

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('video_link')->nullable();
             $table->text('image')->nullable();
+            $table->string('alt');
             $table->text('description');
             $table->enum('is_highlight', ['false', 'true'])->default('false');
             $table->timestamps();

@@ -33,19 +33,18 @@
             <div class="card-body px-md-4 px-3 py-md-3 py-3">
                 <div class="col d-flex align-items-center justify-content-between mb-3 gap-md-0 gap-2">
                     <h4 class="m-0">List Award & Achievements</h4>
-                    <a class="btn btn-primary d-flex align-items-center fs-2" href="{{ route('admin.create_change_making_project') }}" role="button">
+                    <a class="btn btn-primary d-flex align-items-center fs-2" href="{{ route('admin.create_award_achievement') }}" role="button">
                         <i class="ti ti-square-rounded-plus fs-5"></i>
                         <span class="d-md-block d-none ms-2">Add New</span>
                     </a>
                 </div>
-                <table class="table table-bordered hover" id="listchangemakingproject" style="width: 100%">
+                <table class="table table-bordered hover" id="listawardachievement" style="width: 100%">
                     <thead>
                         <tr>
                             <th scope="col">No</th>
-                            <th scope="col">Organization Name</th>
-                            <th scope="col">Roles</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Highlight</th>
+                            <th scope="col">Competition Name</th>
+                            <th scope="col">Award Name</th>
+                            <th scope="col">Image</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -83,31 +82,27 @@
 <script>
     // List Guidebook
     $(function() {
-        $('#listchangemakingproject').DataTable({
+        $('#listawardachievement').DataTable({
             scrollX: true,
             responsive: true,
             processing: true,
             serverSide: true,
-            ajax: '{{ route('admin.data_change_making_project') }}',
+            ajax: '{{ route('admin.data_award_achievement') }}',
                 columns: [{
                         data: 'DT_RowIndex',
                         name: 'DT_RowIndex'
                     },
                     {
-                        data: 'organization_name',
-                        name: 'organization_name'
+                        data: 'competition_name',
+                        name: 'competition_name'
                     },
                     {
-                        data: 'roles',
-                        name: 'roles'
+                        data: 'award_name',
+                        name: 'award_name'
                     },
                     {
-                        data: 'description',
-                        name: 'description'
-                    },
-                    {
-                        data: 'highlight',
-                        name: 'highlight',
+                        data: 'image',
+                        name: 'image',
                         class: 'text-center'
                     },
                     {
@@ -119,7 +114,7 @@
         });
     });
     function formDelete(id){
-        $('#form_delete').attr('action', '{{ url('/admin/change-making-project/delete/') }}' + '/' + id);
+        $('#form_delete').attr('action', '{{ url('/admin/award-achievement/delete/') }}' + '/' + id);
     };
 </script>
 @endsection
