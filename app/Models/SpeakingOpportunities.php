@@ -5,19 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AwardAchievement extends Model
+class SpeakingOpportunities extends Model
 {
     use HasFactory;
 
-    protected $table = "tb_award_achievements";
+    protected $table = "tb_speaking_opportunities";
     protected $primaryKey = 'id';
 
     protected $fillable = [
         'id',
-        'competition_name',
-        'award_name',
+        'title',
+        'video_link',
         'image',
         'alt',
+        'description',
+        'is_highlight',
         'created_at',
         'updated_at'
     ];

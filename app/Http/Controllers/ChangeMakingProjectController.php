@@ -72,7 +72,7 @@ class ChangeMakingProjectController extends Controller
             'roles' => 'required',
             'description' => 'required',
             'button_title' => 'nullable',
-            'button_link' => 'nullable',
+            'button_link' => 'nullable|url',
         ]);
 
         DB::beginTransaction();
@@ -105,7 +105,7 @@ class ChangeMakingProjectController extends Controller
             'roles' => 'required',
             'description' => 'required',
             'button_title' => 'nullable',
-            'button_link' => 'nullable',
+            'button_link' => 'nullable|url',
         ]);
 
         DB::beginTransaction();

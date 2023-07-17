@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AwardAchievementController;
 use App\Http\Controllers\ChangeMakingProjectController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SpeakingOpportunitiesController;
 
 Route::prefix('admin')->name('admin.')->group(function(){
 
@@ -32,13 +33,24 @@ Route::prefix('admin')->name('admin.')->group(function(){
         // Award & Achievement
         Route::controller(AwardAchievementController::class)->group(function () {
             Route::get('/award-achievement', 'index')->name('award_achievement');
-            // Route::get('/change-making-project/data', 'getChangeMakingProject')->name('data_change_making_project');
-            // Route::get('/change-making-project/create', 'create')->name('create_change_making_project');
-            // Route::post('/change-making-project/store', 'store')->name('store_change_making_project');
-            // Route::get('/change-making-project/{id}/edit', 'edit')->name('edit_change_making_project');
-            // Route::post('/change-making-project/{id}/update', 'update')->name('update_change_making_project');
-            // Route::post('/change-making-project/delete/{id}', 'delete')->name('delete_change_making_project');
-            // Route::post('/change-making-project/highlight/{id}', 'set_highlight')->name('highlight_change_making_project');
+            Route::get('/award-achievement/data', 'getAwardAchievement')->name('data_award_achievement');
+            Route::get('/award-achievement/create', 'create')->name('create_award_achievement');
+            Route::post('/award-achievement/store', 'store')->name('store_award_achievement');
+            Route::get('/award-achievement/{id}/edit', 'edit')->name('edit_award_achievement');
+            Route::post('/award-achievement/{id}/update', 'update')->name('update_award_achievement');
+            Route::post('/award-achievement/delete/{id}', 'delete')->name('delete_award_achievement');
+        });
+
+        // Speaking Opportunities
+        Route::controller(SpeakingOpportunitiesController::class)->group(function () {
+            Route::get('/speaking-opportunities', 'index')->name('speaking_opportunities');
+            Route::get('/speaking-opportunities/data', 'getSpeakingOpportunities')->name('data_speaking_opportunities');
+            Route::get('/speaking-opportunities/create', 'create')->name('create_speaking_opportunities');
+            Route::post('/speaking-opportunities/store', 'store')->name('store_speaking_opportunities');
+            Route::get('/speaking-opportunities/{id}/edit', 'edit')->name('edit_speaking_opportunities');
+            Route::post('/speaking-opportunities/{id}/update', 'update')->name('update_speaking_opportunities');
+            Route::post('/speaking-opportunities/delete/{id}', 'delete')->name('delete_speaking_opportunities');
+            Route::post('/speaking-opportunities/highlight/{id}', 'set_highlight')->name('highlight_speaking_opportunities');
         });
     });
 });

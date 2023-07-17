@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('competition_name');
             $table->string('award_name');
             $table->text('image');
+            $table->string('alt');
             $table->timestamps();
         });
     }
