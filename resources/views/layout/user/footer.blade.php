@@ -1,6 +1,6 @@
  {{-- Start Footer --}}
- <footer>
-     <div class="py-10 bg-footer bg-right-top bg-cover">
+ <footer id="contact">
+     <div class="py-10 bg-footer bg-right-top bg-cover font-secondary">
          <div class="max-w-screen-lg mx-auto px-4 py-2 lg:pr-40 flex flex-col">
              <h1 class="font-primary font-bold text-4xl text-primary md:text-5xl lg:text-7xl">CONNECT WITH ME</h1>
              <div class="flex gap-x-4">
@@ -23,29 +23,65 @@
 
                  </div>
              </div>
-             <div class="w-full py-8">
-                 <form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                     <div class="col-span-full md:col-span-1">
-                         <input type="text"
-                             class="w-full px-4 py-2 bg-transparent border border-light font-medium text-primary focus:outline focus:outline-offset-0 focus:outline-primary focus:border-primary placeholder:font-secondary placeholder:text-primary/70"
-                             placeholder="Name">
-                     </div>
-                     <div class="col-span-full md:col-span-1">
-                         <input type="number"
-                             class="w-full px-4 py-2 bg-transparent border border-light font-medium text-primary focus:outline focus:outline-offset-0 focus:outline-primary focus:border-primary placeholder:font-secondary placeholder:text-primary/70"
-                             placeholder="Contact Number">
-                     </div>
-                     <div class="col-span-full">
-                         <input type="email"
-                             class="w-full px-4 py-2 bg-transparent border border-light font-medium text-primary focus:outline focus:outline-offset-0 focus:outline-primary focus:border-primary placeholder:font-secondary placeholder:text-primary/70"
-                             placeholder="Email Address">
-                     </div>
-                     <div class="col-span-full">
-                         <textarea name="email" id="email" cols="30" rows="10" placeholder="Message"
-                             class="w-full px-4 py-2 bg-transparent border border-light font-medium text-primary focus:outline focus:outline-offset-0 focus:outline-primary focus:border-primary placeholder:font-secondary placeholder:text-primary/70"></textarea>
-                     </div>
-                 </form>
-             </div>
+             @if (session()->has('success_send'))
+                 <div class="mt-10 border-2 py-20 border-primary">
+                     <h1 class="font-primary font-bold text-xl text-center text-primary md:text-5xl lg:text-3xl">Thank
+                         You! <br> Your message has been send.</h1>
+                 </div>
+             @else
+                 <div class="w-full py-8">
+                     <form action="{{ route('send_contact_with_me') }}" method="POST"
+                         class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                         @csrf
+                         <div class="col-span-full md:col-span-1">
+                             <input type="text"
+                                 class="w-full px-4 py-2 bg-transparent border @error('name') border-orange-400  @enderror border-light font-medium text-primary focus:outline focus:outline-offset-0 focus:outline-primary focus:border-primary placeholder:font-secondary placeholder:text-primary/70 @error('name') placeholder:text-orange-400/70 @enderror"
+                                 placeholder="Name" name="name" value="{{ old('name') }}">
+                             @error('name')
+                                 <div class="mt-1 font text-sm text-orange-400">
+                                     {{ $message }}
+                                 </div>
+                             @enderror
+                         </div>
+                         <div class="col-span-full md:col-span-1">
+                             <input type="text"
+                                 class="w-full px-4 py-2 bg-transparent border @error('contact_number') border-orange-400  @enderror border-light font-medium text-primary focus:outline focus:outline-offset-0 focus:outline-primary focus:border-primary placeholder:font-secondary placeholder:text-primary/70 @error('contact_number') placeholder:text-orange-400/70 @enderror"
+                                 placeholder="Contact Number" name="contact_number" value="{{ old('contact_number') }}">
+                             @error('contact_number')
+                                 <div class="mt-1 font text-sm text-orange-400">
+                                     {{ $message }}
+                                 </div>
+                             @enderror
+                         </div>
+                         <div class="col-span-full">
+                             <input type="email"
+                                 class="w-full px-4 py-2 bg-transparent border @error('email') border-orange-400  @enderror border-light font-medium text-primary focus:outline focus:outline-offset-0 focus:outline-primary focus:border-primary placeholder:font-secondary placeholder:text-primary/70 @error('email') placeholder:text-orange-400/70 @enderror"
+                                 placeholder="Email Address" name="email" value="{{ old('email') }}">
+                             @error('email')
+                                 <div class="mt-1 font text-sm text-orange-400">
+                                     {{ $message }}
+                                 </div>
+                             @enderror
+                         </div>
+                         <div class="col-span-full">
+                             <textarea id="message" cols="30" rows="10" placeholder="Message" name="message"
+                                 class="w-full px-4 py-2 bg-transparent border @error('message') border-orange-400  @enderror border-light font-medium text-primary focus:outline focus:outline-offset-0 focus:outline-primary focus:border-primary placeholder:font-secondary placeholder:text-primary/70 @error('message') placeholder:text-orange-400/70 @enderror">{{ old('email') }}</textarea>
+                             @error('message')
+                                 <div class="mt-1 font text-sm text-orange-400">
+                                     {{ $message }}
+                                 </div>
+                             @enderror
+                         </div>
+                         <div class="col-span-full flex justify-end">
+
+                             <button type="submit"
+                                 class="px-4 py-2 font-secondary font-semibold text-lg text-light bg-primary">
+                                 Send
+                             </button>
+                         </div>
+                     </form>
+                 </div>
+             @endif
          </div>
      </div>
  </footer>

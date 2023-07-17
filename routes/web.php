@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\User\AchievementController;
+use App\Http\Controllers\User\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::post('/contact-with-me', 'contact_with_me')->name('send_contact_with_me');
 });
 
-Route::get('/achievements', function () {
-    return view('achievements');
+Route::controller(AchievementController::class)->group(function () {
+    Route::get('/achievements', 'index');
 });
