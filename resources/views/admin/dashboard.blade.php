@@ -97,11 +97,13 @@
             <div class="card-body">
                 <div class="row align-items-start">
                     <div class="col-md-8 col">
-                        <h5 class="card-title mb-9 fw-semibold">
-                            Speaking Oppurtunities
-                        </h5>
+                        <a href="{{ route('admin.speaking_opportunities') }}">
+                            <h5 class="card-title mb-9 fw-semibold">
+                                Speaking Opportunities
+                            </h5>
+                        </a>
                         <h4 class="fw-semibold mb-3">
-                            0
+                            {{ $speaking_opportunities->count() }}
                         </h4>
                         <div class="d-flex align-items-center pb-1">
                             <span

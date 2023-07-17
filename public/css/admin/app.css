@@ -87,6 +87,20 @@ table td p {
 .r-separator .form-group {
     border-bottom: 1px solid #ebf1f6;
 }
+@media (max-width: 768px) {
+    .input-field {
+        border-left: 0 !important;
+    }
+}
+
+#img_preview {
+    width: 40%;
+}
+@media (max-width: 768px) {
+    #img_preview {
+        width: 100%;
+    }
+}
 
 /*--------------------------------------------------------------
 # Modal

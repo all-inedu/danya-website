@@ -47,7 +47,7 @@
                 <div class="card-body px-md-4 px-3 py-3">
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0 border-top">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Competition Name <span class="fs-4" style="color: crimson">*</span></label>
-                        <div class="col-md-9 border-md-start border-none pb-2 pt-md-2">
+                        <div class="col-md-9 input-field border-start pb-2 pt-md-2">
                             <input type="text" class="form-control" id="" name="competition_name" value="{{ old('competition_name') }}" placeholder="Competition Name">
                             @error('competition_name')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Award Name <span class="fs-4" style="color: crimson">*</span></label>
-                        <div class="col-md-9 border-md-start border-none pb-2 pt-md-2">
+                        <div class="col-md-9 input-field border-start pb-2 pt-md-2">
                             <input type="text" class="form-control" id="" name="award_name" value="{{ old('award_name') }}" placeholder="Award Name">
                             @error('award_name')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
@@ -65,10 +65,10 @@
                     </div>
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Image <span class="fs-4" style="color: crimson">*</span></label>
-                        <div class="col-md-9 border-md-start border-none pb-2 pt-md-2">
+                        <div class="col-md-9 input-field border-start pb-2 pt-md-2">
                             <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">
-                            <div class="col d-none d-flex justify-content-start mt-1" id="img_preview_box">
-                                <img class="w-25 h-25 rounded" id="img_preview">
+                            <div class="col d-none d-flex justify-content-start mt-2" id="img_preview_box">
+                                <img class="rounded" id="img_preview">
                             </div>
                             @error('image')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Alt <span class="fs-4" style="color: crimson">*</span></label>
-                        <div class="col-md-9 border-md-start border-none pb-2 pt-md-2">
+                        <div class="col-md-9 input-field border-start pb-2 pt-md-2">
                             <input type="text" class="form-control" id="" name="alt" value="{{ old('alt') }}" placeholder="Alt">
                             @error('alt')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>

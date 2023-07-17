@@ -46,11 +46,11 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="#">
+                    <a class="sidebar-link {{ request()->is('admin/speaking-opportunities*') ? 'active' : '' }}" href="{{ route('admin.speaking_opportunities') }}">
                         <span>
                             <i class="ti ti-speakerphone"></i>
                         </span>
-                        <span class="hide-menu">Speaking Oppurtunities</span>
+                        <span class="hide-menu">Speaking Opportunities</span>
                     </a>
                 </li>
                 <li class="sidebar-item">

@@ -47,7 +47,7 @@
                 <div class="card-body px-md-4 px-3 py-3">
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0 border-top">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Organization Name <span class="fs-4" style="color: crimson">*</span></label>
-                        <div class="col-md-9 border-md-start border-none pb-2 pt-md-2">
+                        <div class="col-md-9 input-field border-start pb-2 pt-md-2">
                             <input type="text" class="form-control" id="" name="organization_name" value="{{ $change_making_project->organization_name }}" placeholder="Organization Name">
                             @error('organization_name')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Roles <span class="fs-4" style="color: crimson">*</span></label>
-                        <div class="col-md-9 border-md-start border-none pb-2 pt-md-2">
+                        <div class="col-md-9 input-field border-start pb-2 pt-md-2">
                             <input type="text" class="form-control" id="" name="roles" value="{{ $change_making_project->roles }}" placeholder="Roles">
                             @error('roles')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
@@ -65,7 +65,7 @@
                     </div>
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Description <span class="fs-4" style="color: crimson">*</span></label>
-                        <div class="col-md-9 border-md-start border-none pb-2 pt-md-2">
+                        <div class="col-md-9 input-field border-start pb-2 pt-md-2">
                             <textarea name="description" id="">
                                 {{ $change_making_project->description }}
                             </textarea>
@@ -76,7 +76,7 @@
                     </div>
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Button Title</label>
-                        <div class="col-md-9 border-md-start border-none pb-2 pt-md-2">
+                        <div class="col-md-9 input-field border-start pb-2 pt-md-2">
                             <input type="text" class="form-control" id="" name="button_title" value="{{ $change_making_project->button_title }}" placeholder="Button Title">
                             @error('button_title')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
@@ -85,7 +85,7 @@
                     </div>
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Button Link</label>
-                        <div class="col-md-9 border-md-start border-none pb-2 pt-md-2">
+                        <div class="col-md-9 input-field border-start pb-2 pt-md-2">
                             <input type="url" class="form-control" id="" name="button_link" value="{{ $change_making_project->button_link }}" placeholder="Button Link">
                             @error('button_link')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>

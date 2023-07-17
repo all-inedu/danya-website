@@ -24,7 +24,7 @@ class AwardAchievementController extends Controller
             ->editColumn('image', function($d){
                 $path = asset('uploaded_files/'.'award_achievement/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->image);
                 $result = '
-                    <img data-original="'.$path.'" src="'.$path.'" alt="'.$d->alt.'" width="100" loading="lazy">
+                    <img data-original="'.$path.'" src="'.$path.'" alt="'.$d->alt.'" width="200" loading="lazy">
                 ';
                 return $result;
             })
