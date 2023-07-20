@@ -80,7 +80,7 @@
 @endsection
 @section('js')
 <script>
-    // List Guidebook
+    // List Award Achievement
     $(function() {
         $('#listawardachievement').DataTable({
             scrollX: true,

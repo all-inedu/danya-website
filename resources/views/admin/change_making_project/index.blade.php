@@ -81,7 +81,7 @@
 @endsection
 @section('js')
 <script>
-    // List Guidebook
+    // List Change Making Project
     $(function() {
         $('#listchangemakingproject').DataTable({
             scrollX: true,

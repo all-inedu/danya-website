@@ -77,7 +77,7 @@
 @endsection
 @section('js')
 <script>
-    // List Guidebook
+    // List Contact With Me
     $(function() {
         $('#listcontactwithme').DataTable({
             scrollX: true,
