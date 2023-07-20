@@ -134,11 +134,13 @@
             <div class="card-body">
                 <div class="row align-items-start">
                     <div class="col-md-8 col">
-                        <h5 class="card-title mb-9 fw-semibold">
-                            Contact With Me
-                        </h5>
+                        <a href="{{ route('admin.contact_with_me') }}">
+                            <h5 class="card-title mb-9 fw-semibold">
+                                Contact With Me
+                            </h5>
+                        </a>
                         <h4 class="fw-semibold mb-3">
-                            0
+                            {{ $contact_with_me->count() }}
                         </h4>
                         <div class="d-flex align-items-center pb-1">
                             <span

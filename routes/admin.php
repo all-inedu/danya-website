@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AwardAchievementController;
 use App\Http\Controllers\ChangeMakingProjectController;
+use App\Http\Controllers\ContactWithMeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SpeakingOpportunitiesController;
+use App\Models\ContactWithMe;
 
 Route::prefix('admin')->name('admin.')->group(function(){
 
@@ -51,6 +53,12 @@ Route::prefix('admin')->name('admin.')->group(function(){
             Route::post('/speaking-opportunities/{id}/update', 'update')->name('update_speaking_opportunities');
             Route::post('/speaking-opportunities/delete/{id}', 'delete')->name('delete_speaking_opportunities');
             Route::post('/speaking-opportunities/highlight/{id}', 'set_highlight')->name('highlight_speaking_opportunities');
+        });
+
+        // Contact With Me
+        Route::controller(ContactWithMeController::class)->group(function () {
+            Route::get('/contact-with-me', 'index')->name('contact_with_me');
+            Route::get('/contact-with-me/data', 'getContactWithMe')->name('data_contact_with_me');
         });
     });
 });
