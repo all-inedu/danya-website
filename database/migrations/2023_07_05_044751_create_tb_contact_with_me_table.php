@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tb_contact_with_me', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->bigInteger('contact_number');
+            $table->string('contact_number');
             $table->string('email');
             $table->text('message');
             $table->timestamps();
