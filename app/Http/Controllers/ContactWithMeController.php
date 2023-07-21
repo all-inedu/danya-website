@@ -28,13 +28,14 @@ class ContactWithMeController extends Controller
                 return $result;
             })
             ->editColumn('action', function($d){
+                $name = "'".$d->name."'";
+                $contact_number = "'".$d->contact_number."'";
+                $email = "'".$d->email."'";
+                $message = "'".$d->message."'";
                 $result = '
                 <div class="d-flex flex-row justify-content-center gap-1">
-                    <a type="button" class="btn btn-warning bg-warning" href="/admin/change-making-project/'.$d->id.'/edit">
-                        <i class="ti ti-edit fs-4" data-bs-toggle="tooltip" data-bs-title="Edit this Change Making Project"></i>
-                    </a>
-                    <button type="button" class="btn btn-danger bg-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete('.$d->id.')">
-                        <i class="ti ti-trash fs-4" data-bs-toggle="tooltip" data-bs-title="Delete this Change Making Project"></i>
+                    <button type="button" class="btn btn-warning bg-warning" data-bs-toggle="modal" data-bs-target="#viewDetail" onclick="viewItem('.$d->id.', '.$name.', '.$contact_number.', '.$email.', '.$message.')">
+                        <i class="ti ti-search fs-4" data-bs-toggle="tooltip" data-bs-title="View this Contact With Me"></i>
                     </button>
                 </div>
                 ';

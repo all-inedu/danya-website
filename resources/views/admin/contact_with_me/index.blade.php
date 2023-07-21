@@ -74,6 +74,50 @@
         </div>
     </div>
 </div>
+{{-- Modal Detail --}}
+<div class="modal fade" id="viewDetail" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content border-0">
+            <div class="modal-header">
+                <div class="col d-flex gap-2 align-items-center">
+                    <i class="ti ti-info-square-rounded"></i>
+                    <h6 class="modal-title ms-2" id="title-info">Detail Item</h6>
+                </div>
+            </div>
+            <div class="modal-body py-1" style="overflow-x: hidden">
+                <div class="card-body px-md-4 px-3 py-3">
+                    <div class="form-group row flex-md-row flex-column align-items-center mb-0 border-top">
+                        <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Name</label>
+                        <div class="col-md-9 input-field border-start pb-2 pt-md-2">
+                            <input type="text" class="form-control" readonly id="name">
+                        </div>
+                    </div>
+                    <div class="form-group row flex-md-row flex-column align-items-center mb-0 border-top">
+                        <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Contact Number</label>
+                        <div class="col-md-9 input-field border-start pb-2 pt-md-2">
+                            <input type="text" class="form-control" readonly id="contact_number">
+                        </div>
+                    </div>
+                    <div class="form-group row flex-md-row flex-column align-items-center mb-0 border-top">
+                        <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Email</label>
+                        <div class="col-md-9 input-field border-start pb-2 pt-md-2">
+                            <input type="text" class="form-control" readonly id="email">
+                        </div>
+                    </div>
+                    <div class="form-group row flex-md-row flex-column align-items-center mb-0 border-top border-bottom">
+                        <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Message</label>
+                        <div class="col-md-9 input-field border-start pb-2 pt-md-2">
+                            <textarea id="message"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 py-3">
+                <button class="text-white" type="submit" style="font-size: 13px; background: var(--danger);" data-bs-dismiss="modal" aria-label="Close">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 @section('js')
 <script>
@@ -113,8 +157,11 @@
                 ]
         });
     });
-    // function formDelete(id){
-    //     $('#form_delete').attr('action', '{{ url('/admin/change-making-project/delete/') }}' + '/' + id);
-    // };
+    function viewItem(id, name, contact_number, email, message) {
+        $('#name').attr('value', name);
+        $('#contact_number').attr('value', contact_number);
+        $('#email').attr('value', email);
+        tinymce.get("message").setContent(message).getBody().setAttribute('contenteditable', false);
+    }
 </script>
 @endsection
