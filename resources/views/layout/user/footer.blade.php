@@ -23,6 +23,14 @@
 
                  </div>
              </div>
+             @if (session()->has('failed_send'))
+                 <div class="mt-10 border py-4 border-orange-400">
+                     <div class="mt-1 font text-sm text-orange-400">
+                         {{ session('failed_send') }}
+                     </div>
+                 </div>
+             @endif
+
              @if (session()->has('success_send'))
                  <div class="mt-10 border-2 py-20 border-primary">
                      <h1 class="font-primary font-bold text-xl text-center text-primary md:text-5xl lg:text-3xl">Thank
@@ -65,7 +73,7 @@
                          </div>
                          <div class="col-span-full">
                              <textarea id="message" cols="30" rows="10" placeholder="Message" name="message"
-                                 class="w-full px-4 py-2 bg-transparent border @error('message') border-orange-400  @enderror border-light font-medium text-primary focus:outline focus:outline-offset-0 focus:outline-primary focus:border-primary placeholder:font-secondary placeholder:text-primary/70 @error('message') placeholder:text-orange-400/70 @enderror">{{ old('email') }}</textarea>
+                                 class="w-full px-4 py-2 bg-transparent border @error('message') border-orange-400  @enderror border-light font-medium text-primary focus:outline focus:outline-offset-0 focus:outline-primary focus:border-primary placeholder:font-secondary placeholder:text-primary/70 @error('message') placeholder:text-orange-400/70 @enderror">{{ old('message') }}</textarea>
                              @error('message')
                                  <div class="mt-1 font text-sm text-orange-400">
                                      {{ $message }}
