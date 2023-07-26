@@ -54,7 +54,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="#">
+                    <a class="sidebar-link {{ request()->is('admin/contact-with-me*') ? 'active' : '' }}" href="{{ route('admin.contact_with_me') }}">
                         <span>
                             <i class="ti ti-file-phone"></i>
                         </span>

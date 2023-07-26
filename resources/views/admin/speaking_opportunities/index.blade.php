@@ -81,7 +81,7 @@
 @endsection
 @section('js')
 <script>
-    // List Guidebook
+    // List Speaking Opportunities
     $(function() {
         $('#listspeakingopportunities').DataTable({
             scrollX: true,
