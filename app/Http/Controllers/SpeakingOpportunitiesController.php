@@ -40,6 +40,8 @@ class SpeakingOpportunitiesController extends Controller
                     $result = '
                         <iframe width="200" src="'.$link.'" allowfullscreen></iframe>
                     ';
+                } else {
+                    $result = '-';
                 }
                 return $result;
             })
@@ -97,7 +99,8 @@ class SpeakingOpportunitiesController extends Controller
             $speaking_opportunities->title = $request->title;
             $speaking_opportunities->description = $request->description;
             $speaking_opportunities->alt = $request->alt;
-            if (!$request->hasFile('image')) {
+            // Video
+            if ($request->video_link) {
                 if (str_contains($request->video_link, 'https://youtu.be/')) {
                     $speaking_opportunities->video_link = $request->video_link;
                 } else {
@@ -105,6 +108,7 @@ class SpeakingOpportunitiesController extends Controller
                 }
                 $speaking_opportunities->image = null;
             }
+            // Image
             if ($request->hasFile('image')) {
                 $file = $request->file('image');
                 $file_format = $request->file('image')->getClientOriginalExtension();
@@ -146,7 +150,8 @@ class SpeakingOpportunitiesController extends Controller
             $speaking_opportunities->title = $request->title;
             $speaking_opportunities->description = $request->description;
             $speaking_opportunities->alt = $request->alt;
-            if (!$request->hasFile('image')) {
+            // Video
+            if ($request->video_link) {
                 if (str_contains($request->video_link, 'https://youtu.be/')) {
                     // Delete Image
                     if ($old_image_path = $speaking_opportunities->image) {
@@ -160,7 +165,10 @@ class SpeakingOpportunitiesController extends Controller
                     return Redirect::back()->withErrors('Video URL must be from Youtube');
                 }
                 $speaking_opportunities->image = null;
+            } else {
+                $speaking_opportunities->video_link = null;
             }
+            // Image
             if ($request->hasFile('image')) {
                 if ($old_image_path = $speaking_opportunities->image) {
                     $file_path = public_path('uploaded_files/'.'speaking_opportunities/'.$speaking_opportunities->created_at->format('Y').'/'.$speaking_opportunities->created_at->format('m').'/'.$old_image_path);
