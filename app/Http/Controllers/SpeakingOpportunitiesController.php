@@ -153,7 +153,7 @@ class SpeakingOpportunitiesController extends Controller
             // Video
             if ($request->video_link) {
                 if (str_contains($request->video_link, 'https://youtu.be/')) {
-                    // Delete Image
+                    // Delete Old Image
                     if ($old_image_path = $speaking_opportunities->image) {
                         $file_path = public_path('uploaded_files/'.'speaking_opportunities/'.$speaking_opportunities->created_at->format('Y').'/'.$speaking_opportunities->created_at->format('m').'/'.$old_image_path);
                         if (File::exists($file_path)) {
