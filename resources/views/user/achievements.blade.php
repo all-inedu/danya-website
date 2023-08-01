@@ -10,7 +10,7 @@
         </div>
         <div class="max-w-screen-lg mx-auto px-4 py-2">
             <div class="py-10">
-                <ul class="flex flex-col gap-x-4 gap-y-14">
+                <ul class="flex flex-col gap-x-4 gap-y-14 mb-6">
                     @foreach ($award_achievements as $item)
                         <li class="flex flex-col md:flex-row">
                             <div class="w-full">
@@ -27,8 +27,8 @@
                             </div>
                         </li>
                     @endforeach
-
                 </ul>
+                {{ $award_achievements->links('layout.pagination.tailwind') }}
             </div>
         </div>
     </section>
