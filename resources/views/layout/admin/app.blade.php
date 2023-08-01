@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mentee Project</title>
+    <title>Danya Website</title>
     <link rel="shortcut icon" type="image/png" href="{{ asset('images/profile/profile.png') }}" />
 
     {{-- SweetAlert --}}
