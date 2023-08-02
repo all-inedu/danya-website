@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\SpeakingOpportunities;
 use Exception;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
@@ -32,13 +33,23 @@ class SpeakingOpportunitiesController extends Controller
                 if ($d->image) {
                     $path = asset('uploaded_files/'.'speaking_opportunities/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->image);
                     $result = '
-                        <img data-original="'.$path.'" src="'.$path.'" alt="'.$d->alt.'" width="200" loading="lazy">
+                        <img data-original="'.$path.'" src="'.$path.'" alt="'.$d->alt.'" width="180" loading="lazy">
                     ';
                 } else if ($d->video_link) {
                     $id = substr($d->video_link, strrpos($d->video_link, '/' ) + 1);
                     $link = 'https://www.youtube.com/embed/'.$id;
                     $result = '
-                        <iframe width="200" src="'.$link.'" allowfullscreen></iframe>
+                        <iframe width="180" src="'.$link.'" allowfullscreen></iframe>
+                    ';
+                } else {
+                    $result = '-';
+                }
+                return $result;
+            })
+            ->editColumn('event_date', function($d){
+                if ($d->event_date) {
+                    $result = '
+                        '.date('F Y', strtotime($d->event_date)).'
                     ';
                 } else {
                     $result = '-';
@@ -75,7 +86,7 @@ class SpeakingOpportunitiesController extends Controller
                 ';
                 return $result;
             })
-            ->rawColumns(['description', 'image_video', 'highlight', 'action'])
+            ->rawColumns(['description', 'image_video', 'event_date', 'highlight', 'action'])
             ->make(true);
         }
     }
@@ -91,6 +102,7 @@ class SpeakingOpportunitiesController extends Controller
             'video_link' => 'nullable|url',
             'alt' => 'required',
             'description' => 'required',
+            'event_date' => 'nullable',
         ]);
 
         DB::beginTransaction();
@@ -119,6 +131,11 @@ class SpeakingOpportunitiesController extends Controller
                 $speaking_opportunities->image = $fileName;
                 $speaking_opportunities->video_link = null;
             }
+            if ($request->event_date) {
+                $speaking_opportunities->event_date = Carbon::createFromFormat('Y-m', $request->event_date)->day(1);
+            } else {
+                $speaking_opportunities->event_date = null;
+            }
             $speaking_opportunities->save();
             DB::commit();
         } catch (Exception $e) {
@@ -142,6 +159,7 @@ class SpeakingOpportunitiesController extends Controller
             'video_link' => 'nullable|url',
             'alt' => 'required',
             'description' => 'required',
+            'event_date' => 'nullable',
         ]);
 
         DB::beginTransaction();
@@ -184,6 +202,11 @@ class SpeakingOpportunitiesController extends Controller
                 $file->move($destinationPath, $fileName);
                 $speaking_opportunities->image = $fileName;
                 $speaking_opportunities->video_link = null;
+            }
+            if ($request->event_date) {
+                $speaking_opportunities->event_date = Carbon::createFromFormat('Y-m', $request->event_date)->day(1);
+            } else {
+                $speaking_opportunities->event_date = null;
             }
             $speaking_opportunities->save();
             DB::commit();

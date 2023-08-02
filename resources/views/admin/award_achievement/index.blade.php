@@ -45,6 +45,7 @@
                             <th scope="col">Competition Name</th>
                             <th scope="col">Award Name</th>
                             <th scope="col">Image</th>
+                            <th scope="col">Competition Date</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -103,6 +104,11 @@
                     {
                         data: 'image',
                         name: 'image',
+                        class: 'text-center'
+                    },
+                    {
+                        data: 'competition_date',
+                        name: 'competition_date',
                         class: 'text-center'
                     },
                     {

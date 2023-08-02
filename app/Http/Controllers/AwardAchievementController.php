@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AwardAchievement;
 use Exception;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
@@ -24,8 +25,18 @@ class AwardAchievementController extends Controller
             ->editColumn('image', function($d){
                 $path = asset('uploaded_files/'.'award_achievement/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->image);
                 $result = '
-                    <img data-original="'.$path.'" src="'.$path.'" alt="'.$d->alt.'" width="200" loading="lazy">
+                    <img data-original="'.$path.'" src="'.$path.'" alt="'.$d->alt.'" width="150" loading="lazy">
                 ';
+                return $result;
+            })
+            ->editColumn('competition_date', function($d){
+                if ($d->competition_date) {
+                    $result = '
+                        '.date('F Y', strtotime($d->competition_date)).'
+                    ';
+                } else {
+                    $result = '-';
+                }
                 return $result;
             })
             ->editColumn('action', function($d){
@@ -41,7 +52,7 @@ class AwardAchievementController extends Controller
                 ';
                 return $result;
             })
-            ->rawColumns(['image', 'action'])
+            ->rawColumns(['image', 'competition_date', 'action'])
             ->make(true);
         }
     }
@@ -56,6 +67,7 @@ class AwardAchievementController extends Controller
             'award_name' => 'required',
             'image' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'alt' => 'required',
+            'competition_date' => 'nullable',
         ]);
 
         DB::beginTransaction();
@@ -72,6 +84,11 @@ class AwardAchievementController extends Controller
                 $fileName = 'Award-Achievement-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
                 $award_achievement->image = $fileName;
+            }
+            if ($request->competition_date) {
+                $award_achievement->competition_date = Carbon::createFromFormat('Y-m', $request->competition_date)->day(1);
+            } else {
+                $award_achievement->competition_date = null;
             }
             $award_achievement->save();
             DB::commit();
@@ -95,6 +112,7 @@ class AwardAchievementController extends Controller
             'award_name' => 'required',
             'image' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'alt' => 'required',
+            'competition_date' => 'nullable',
         ]);
 
         DB::beginTransaction();
@@ -117,6 +135,11 @@ class AwardAchievementController extends Controller
                 $fileName = 'Award-Achievement-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
                 $award_achievement->image = $fileName;
+            }
+            if ($request->competition_date) {
+                $award_achievement->competition_date = Carbon::createFromFormat('Y-m', $request->competition_date)->day(1);
+            } else {
+                $award_achievement->competition_date = null;
             }
             $award_achievement->save();
             DB::commit();
