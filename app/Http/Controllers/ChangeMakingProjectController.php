@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ChangeMakingProject;
 use Exception;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Yajra\DataTables\Facades\DataTables;
@@ -25,6 +26,16 @@ class ChangeMakingProjectController extends Controller
                 $result = '
                     '.Str::of($d->description)->limit(70).'
                 ';
+                return $result;
+            })
+            ->editColumn('end_date', function($d){
+                if ($d->end_date) {
+                    $result = '
+                        '.date('F Y', strtotime($d->end_date)).'
+                    ';
+                } else {
+                    $result = '-';
+                }
                 return $result;
             })
             ->editColumn('highlight', function($d){
@@ -57,7 +68,7 @@ class ChangeMakingProjectController extends Controller
                 ';
                 return $result;
             })
-            ->rawColumns(['description', 'highlight', 'action'])
+            ->rawColumns(['description', 'end_date', 'highlight', 'action'])
             ->make(true);
         }
     }
@@ -73,6 +84,7 @@ class ChangeMakingProjectController extends Controller
             'description' => 'required',
             'button_title' => 'nullable',
             'button_link' => 'nullable|url',
+            'end_date' => 'nullable',
         ]);
 
         DB::beginTransaction();
@@ -83,6 +95,11 @@ class ChangeMakingProjectController extends Controller
             $change_making_project->description = $request->description;
             $change_making_project->button_title = $request->button_title;
             $change_making_project->button_link = $request->button_link;
+            if ($request->end_date) {
+                $change_making_project->end_date = Carbon::createFromFormat('Y-m', $request->end_date)->day(1);
+            } else {
+                $change_making_project->end_date = null;
+            }
             $change_making_project->save();
             DB::commit();
         } catch (Exception $e) {
@@ -106,6 +123,7 @@ class ChangeMakingProjectController extends Controller
             'description' => 'required',
             'button_title' => 'nullable',
             'button_link' => 'nullable|url',
+            'end_date' => 'nullable',
         ]);
 
         DB::beginTransaction();
@@ -116,6 +134,11 @@ class ChangeMakingProjectController extends Controller
             $change_making_project->description = $request->description;
             $change_making_project->button_title = $request->button_title;
             $change_making_project->button_link = $request->button_link;
+            if ($request->end_date) {
+                $change_making_project->end_date = Carbon::createFromFormat('Y-m', $request->end_date)->day(1);
+            } else {
+                $change_making_project->end_date = null;
+            }
             $change_making_project->save();
             DB::commit();
         } catch (Exception $e) {

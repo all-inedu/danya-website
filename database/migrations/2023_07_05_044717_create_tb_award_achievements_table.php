@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('award_name');
             $table->text('image');
             $table->string('alt');
+            $table->date('competition_date')->nullable();
             $table->timestamps();
         });
     }

@@ -84,6 +84,15 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="form-group row flex-md-row flex-column align-items-center mb-0">
+                        <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Competition Date</label>
+                        <div class="col-md-3 input-field border-start pb-2 pt-md-2">
+                            <input type="month" class="form-control" id="" name="competition_date" value="{{ $award_achievement->competition_date ? date('Y-m', strtotime($award_achievement->competition_date)) : '' }}">
+                            @error('competition_date')
+                                <small class="alert text-danger ps-0">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
                 </div>
                 <div class="p-3 pt-0">
                     <div class="mb-0 text-center">

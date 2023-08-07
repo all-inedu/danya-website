@@ -18,6 +18,7 @@ class AwardAchievement extends Model
         'award_name',
         'image',
         'alt',
+        'competition_date',
         'created_at',
         'updated_at'
     ];

@@ -20,6 +20,7 @@ class ChangeMakingProject extends Model
         'button_title',
         'button_link',
         'is_highlight',
+        'end_date',
         'created_at',
         'updated_at'
     ];

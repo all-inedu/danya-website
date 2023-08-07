@@ -20,6 +20,7 @@ class SpeakingOpportunities extends Model
         'alt',
         'description',
         'is_highlight',
+        'event_date',
         'created_at',
         'updated_at'
     ];

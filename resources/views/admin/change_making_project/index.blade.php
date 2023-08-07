@@ -45,6 +45,7 @@
                             <th scope="col">Organization Name</th>
                             <th scope="col">Roles</th>
                             <th scope="col">Description</th>
+                            <th scope="col">End Date</th>
                             <th scope="col">Highlight</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -104,6 +105,11 @@
                     {
                         data: 'description',
                         name: 'description'
+                    },
+                    {
+                        data: 'end_date',
+                        name: 'end_date',
+                        class: 'text-center'
                     },
                     {
                         data: 'highlight',

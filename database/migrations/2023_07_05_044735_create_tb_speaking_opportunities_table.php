@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('alt');
             $table->text('description');
             $table->enum('is_highlight', ['false', 'true'])->default('false');
+            $table->date('event_date')->nullable();
             $table->timestamps();
         });
     }

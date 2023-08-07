@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('button_title')->nullable();
             $table->text('button_link')->nullable();
             $table->enum('is_highlight', ['false', 'true'])->default('false');
+            $table->date('end_date')->nullable();
             $table->timestamps();
         });
     }

@@ -45,6 +45,7 @@
                             <th scope="col">Title</th>
                             <th scope="col">Image/Video</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Event Date</th>
                             <th scope="col">Highlight</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -104,6 +105,11 @@
                     {
                         data: 'description',
                         name: 'description'
+                    },
+                    {
+                        data: 'event_date',
+                        name: 'event_date',
+                        class: 'text-center'
                     },
                     {
                         data: 'highlight',
