@@ -48,7 +48,7 @@
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0 border-top">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Organization Name <span class="fs-4" style="color: crimson">*</span></label>
                         <div class="col-md-9 input-field border-start pb-2 pt-md-2">
-                            <input type="text" class="form-control" id="" name="organization_name" value="{{ old('organization_name') }}" placeholder="Organization Name">
+                            <input type="text" class="form-control" name="organization_name" value="{{ old('organization_name') }}" placeholder="Organization Name">
                             @error('organization_name')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
                             @enderror
@@ -57,7 +57,7 @@
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Roles <span class="fs-4" style="color: crimson">*</span></label>
                         <div class="col-md-9 input-field border-start pb-2 pt-md-2">
-                            <input type="text" class="form-control" id="" name="roles" value="{{ old('roles') }}" placeholder="Roles">
+                            <input type="text" class="form-control" name="roles" value="{{ old('roles') }}" placeholder="Roles">
                             @error('roles')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
                             @enderror
@@ -66,7 +66,7 @@
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Description <span class="fs-4" style="color: crimson">*</span></label>
                         <div class="col-md-9 input-field border-start pb-2 pt-md-2">
-                            <textarea name="description" id=""></textarea>
+                            <textarea name="description"></textarea>
                             @error('description')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
                             @enderror
@@ -75,7 +75,7 @@
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Button Title</label>
                         <div class="col-md-9 input-field border-start pb-2 pt-md-2">
-                            <input type="text" class="form-control" id="" name="button_title" value="{{ old('button_title') }}" placeholder="Button Title">
+                            <input type="text" class="form-control" name="button_title" value="{{ old('button_title') }}" placeholder="Button Title">
                             @error('button_title')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
                             @enderror
@@ -84,7 +84,7 @@
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Button Link</label>
                         <div class="col-md-9 input-field border-start pb-2 pt-md-2">
-                            <input type="url" class="form-control" id="" name="button_link" value="{{ old('button_link') }}" placeholder="Button Link">
+                            <input type="url" class="form-control" name="button_link" value="{{ old('button_link') }}" placeholder="Button Link">
                             @error('button_link')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
                             @enderror
@@ -93,7 +93,7 @@
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">End Date</label>
                         <div class="col-md-3 input-field border-start pb-2 pt-md-2">
-                            <input type="month" class="form-control" id="" name="end_date" value="{{ old('end_date') }}">
+                            <input type="month" class="form-control" name="end_date" value="{{ old('end_date') }}">
                             @error('end_date')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
                             @enderror

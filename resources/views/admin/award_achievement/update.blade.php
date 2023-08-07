@@ -48,7 +48,7 @@
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0 border-top">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Competition Name <span class="fs-4" style="color: crimson">*</span></label>
                         <div class="col-md-9 input-field border-start pb-2 pt-md-2">
-                            <input type="text" class="form-control" id="" name="competition_name" value="{{ $award_achievement->competition_name }}" placeholder="Competition Name">
+                            <input type="text" class="form-control" name="competition_name" value="{{ $award_achievement->competition_name }}" placeholder="Competition Name">
                             @error('competition_name')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
                             @enderror
@@ -57,7 +57,7 @@
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Award Name <span class="fs-4" style="color: crimson">*</span></label>
                         <div class="col-md-9 input-field border-start pb-2 pt-md-2">
-                            <input type="text" class="form-control" id="" name="award_name" value="{{ $award_achievement->award_name }}" placeholder="Award Name">
+                            <input type="text" class="form-control" name="award_name" value="{{ $award_achievement->award_name }}" placeholder="Award Name">
                             @error('award_name')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
                             @enderror
@@ -78,7 +78,7 @@
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Alt <span class="fs-4" style="color: crimson">*</span></label>
                         <div class="col-md-9 input-field border-start pb-2 pt-md-2">
-                            <input type="text" class="form-control" id="" name="alt" value="{{ $award_achievement->alt }}" placeholder="Alt">
+                            <input type="text" class="form-control" name="alt" value="{{ $award_achievement->alt }}" placeholder="Alt">
                             @error('alt')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
                             @enderror
@@ -87,7 +87,7 @@
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Competition Date</label>
                         <div class="col-md-3 input-field border-start pb-2 pt-md-2">
-                            <input type="month" class="form-control" id="" name="competition_date" value="{{ $award_achievement->competition_date ? date('Y-m', strtotime($award_achievement->competition_date)) : '' }}">
+                            <input type="month" class="form-control" name="competition_date" value="{{ $award_achievement->competition_date ? date('Y-m', strtotime($award_achievement->competition_date)) : '' }}">
                             @error('competition_date')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
                             @enderror

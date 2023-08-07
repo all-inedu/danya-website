@@ -49,6 +49,7 @@
             <!-- Content -->
             <div class="container-fluid d-flex flex-column gap-md-3">
                 @yield('content')
+                @include('admin.change_password.index')
             </div>
         </div>
     </div>

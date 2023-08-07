@@ -48,7 +48,7 @@
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0 border-top">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Title <span class="fs-4" style="color: crimson">*</span></label>
                         <div class="col-md-9 input-field border-start pb-2 pt-md-2">
-                            <input type="text" class="form-control" id="" name="title" value="{{ $speaking_opportunities->title }}" placeholder="Title">
+                            <input type="text" class="form-control" name="title" value="{{ $speaking_opportunities->title }}" placeholder="Title">
                             @error('title')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
                             @enderror
@@ -84,7 +84,7 @@
                             </div>
                             {{-- Video --}}
                             <div class="col mt-2 {{ $speaking_opportunities->video_link ? '' : 'd-none' }}" id="video_input">
-                                <input type="url" class="form-control" id="" name="video_link" value="{{ $speaking_opportunities->video_link }}" placeholder="Video Link">
+                                <input type="url" class="form-control" name="video_link" value="{{ $speaking_opportunities->video_link }}" placeholder="Video Link">
                                 <small class="alert d-block pt-1 p-0 m-0">Only supports <strong class="text-danger">Youtube</strong> videos. e.g. <b><i>https://youtu.be/eRb6lymJOIM</i></b></small>
                                 @error('video_link')
                                     <small class="alert text-danger ps-0">{{ $message }}</small>
@@ -95,7 +95,7 @@
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Alt <span class="fs-4" style="color: crimson">*</span></label>
                         <div class="col-md-9 input-field border-start pb-2 pt-md-2">
-                            <input type="text" class="form-control" id="" name="alt" value="{{ $speaking_opportunities->alt }}" placeholder="Alt">
+                            <input type="text" class="form-control" name="alt" value="{{ $speaking_opportunities->alt }}" placeholder="Alt">
                             @error('alt')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
                             @enderror
@@ -104,7 +104,7 @@
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Description <span class="fs-4" style="color: crimson">*</span></label>
                         <div class="col-md-9 input-field border-start pb-2 pt-md-2">
-                            <textarea name="description" id="">
+                            <textarea name="description">
                                 {{ $speaking_opportunities->description }}
                             </textarea>
                             @error('description')
@@ -115,7 +115,7 @@
                     <div class="form-group row flex-md-row flex-column align-items-center mb-0">
                         <label class="col-md-3 text-md-end text-start control-label col-form-label" for="">Event Date</label>
                         <div class="col-md-3 input-field border-start pb-2 pt-md-2">
-                            <input type="month" class="form-control" id="" name="event_date" value="{{ $speaking_opportunities->event_date ? date('Y-m', strtotime($speaking_opportunities->event_date)) : '' }}">
+                            <input type="month" class="form-control" name="event_date" value="{{ $speaking_opportunities->event_date ? date('Y-m', strtotime($speaking_opportunities->event_date)) : '' }}">
                             @error('event_date')
                                 <small class="alert text-danger ps-0">{{ $message }}</small>
                             @enderror

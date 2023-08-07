@@ -4,10 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AwardAchievementController;
 use App\Http\Controllers\ChangeMakingProjectController;
+use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\ContactWithMeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SpeakingOpportunitiesController;
-use App\Models\ContactWithMe;
 
 Route::prefix('admin')->name('admin.')->group(function(){
 
@@ -59,6 +59,11 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::controller(ContactWithMeController::class)->group(function () {
             Route::get('/contact-with-me', 'index')->name('contact_with_me');
             Route::get('/contact-with-me/data', 'getContactWithMe')->name('data_contact_with_me');
+        });
+
+        // Change Password
+        Route::controller(ChangePasswordController::class)->group(function () {
+            Route::post('/change-password', 'store')->name('store_change_password');
         });
     });
 });
