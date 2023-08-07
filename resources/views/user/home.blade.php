@@ -17,7 +17,7 @@
     {{-- Start Section: Who Is Danya? --}}
     <section class="py-10">
         <div class="max-w-screen-lg mx-auto px-4 py-2">
-            <div class="flex flex-col sm:flex-row">
+            <div class="flex flex-col items-center sm:flex-row">
                 <div class="w-full">
                     <img src="{{ asset('assets/images/image_who_is_danya.png') }}" alt="Who Is Danya?"
                         class="w-full object-cover">
@@ -25,10 +25,13 @@
                 <div class="w-full flex flex-col mt-8 sm:ml-6 sm:mt-0 sm:justify-center">
                     <h3 class="font-bold text-4xl text-dark">Who is</h3>
                     <h2 class="mt-2 font-primary font-bold text-6xl text-primary">Danya?</h2>
-                    <p class="mt-6 text-lg text-dark">A decent scholar who cares a lot about the world and is
-                        willing to
-                        go the
-                        mile to change it. Born in</p>
+                    <p class="mt-2 text-lg leading-6 text-dark font-secondary font-medium">
+                        As a student activist, Danya is committed to driving positive political and environmental change,
+                        serving as the Founder of We The Genesis, an organization that empowers Indonesian youth through
+                        social media and journalism. In addition to advocacy, Danya possesses a strong passion for
+                        academics, believing that learning should be accompanied by empathy in order to utilize knowledge
+                        for the greater good. Danya aspires to leverage education for making a positive impact.
+                    </p>
                 </div>
             </div>
         </div>
@@ -90,36 +93,8 @@
                     <li>
                         <img src="{{ asset('assets/images/logo/HILO_logo.svg') }}" alt="HILO LOGO">
                     </li>
-                    <li>
-                        <img src="{{ asset('assets/images/logo/UPH_logo.svg') }}" alt="UPH LOGO">
-                    </li>
-                    <li>
-                        <img src="{{ asset('assets/images/logo/UI_logo.svg') }}" alt="UI LOGO">
-                    </li>
-                    <li>
-                        <img src="{{ asset('assets/images/logo/HILO_logo.svg') }}" alt="HILO LOGO">
-                    </li>
                 </ul>
-                <ul class="mt-8 flex justify-between gap-6">
-                    <li>
-                        <img src="{{ asset('assets/images/logo/UPH_logo.svg') }}" alt="UPH LOGO">
-                    </li>
-                    <li>
-                        <img src="{{ asset('assets/images/logo/UI_logo.svg') }}" alt="UI LOGO">
-                    </li>
-                    <li>
-                        <img src="{{ asset('assets/images/logo/HILO_logo.svg') }}" alt="HILO LOGO">
-                    </li>
-                    <li>
-                        <img src="{{ asset('assets/images/logo/UPH_logo.svg') }}" alt="UPH LOGO">
-                    </li>
-                    <li>
-                        <img src="{{ asset('assets/images/logo/UI_logo.svg') }}" alt="UI LOGO">
-                    </li>
-                    <li>
-                        <img src="{{ asset('assets/images/logo/HILO_logo.svg') }}" alt="HILO LOGO">
-                    </li>
-                </ul>
+
             </div>
         </div>
     </section>

@@ -13,7 +13,7 @@ class AchievementController extends Controller
     {
         // Get all award & achievements from database
         // Order by updated at from newest to oldest
-        $awardAchievements = AwardAchievement::orderBy('updated_at', 'desc')->get();
+        $awardAchievements = AwardAchievement::orderBy('updated_at')->paginate(3);
 
         return view('user.achievements', [
             'award_achievements' => $awardAchievements,
