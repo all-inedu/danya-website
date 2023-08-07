@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2023 at 04:22 AM
+-- Generation Time: Jul 31, 2023 at 10:55 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -133,6 +133,16 @@ CREATE TABLE `tb_award_achievements` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `tb_award_achievements`
+--
+
+INSERT INTO `tb_award_achievements` (`id`, `competition_name`, `award_name`, `image`, `alt`, `created_at`, `updated_at`) VALUES
+(1, 'InaM2C', 'MERITORIOUS 2023', 'Award-Achievement-20230726110313.png', 'InaM2C', '2023-07-26 04:03:13', '2023-07-26 04:03:13'),
+(2, 'KOMPeK', 'Grand Champion of Economic Research Paper', 'Award-Achievement-20230726110527.png', 'KOMPeK', '2023-07-26 04:05:27', '2023-07-26 04:05:27'),
+(3, 'HiLo Teen Design Thinking Marathon 2022', 'Juara 3', 'Award-Achievement-20230726110705.png', 'HiLo Teen Design Thinking Marathon 2022', '2023-07-26 04:07:05', '2023-07-26 04:07:05'),
+(4, 'Pelita Harapan International Model United Nations 2022', 'Honorable Mention in UNEP', 'Award-Achievement-20230726110945.png', 'Pelita Harapan International Model United Nations 2022', '2023-07-26 04:09:46', '2023-07-26 04:09:46');
+
 -- --------------------------------------------------------
 
 --
@@ -156,9 +166,9 @@ CREATE TABLE `tb_change_making_projects` (
 --
 
 INSERT INTO `tb_change_making_projects` (`id`, `organization_name`, `roles`, `description`, `button_title`, `button_link`, `is_highlight`, `created_at`, `updated_at`) VALUES
-(1, 'We The Genesis', 'Founder, Executive Director', '<p>Founded in 2020, We The Genesis is a Y2Y media organization dedicated to amplifying youth aspirations, stimulating young minds, and igniting youthful ambition with empathy. It serves as a voice for the younger generation, encouraging exploration of potential and contributing to positive change, by creating opportunities for engagement with diverse perspectives. Through its platform, We The Genesis provokes thought, inspires action, and cultivates empathy, empowering the youth to become active contributors to a more inclusive and informed society.</p>', 'Join We The Genesis', NULL, 'false', '2023-07-21 02:22:15', '2023-07-21 02:22:15'),
-(2, '‘Nothing On A Dead Planet’ Campaign', 'Initiator', '<p>Danya and a group of climate activists initiated The Nothing On A Dead Planet Campaign to address the detachment felt by Indonesians towards climate change. The campaign\'s primary objective is to demonstrate that every individual stands to lose something due to climate change, highlighting the impact on aspects of life like education, romance, wellness, and even yoga. By raising awareness and inspiring action, the campaign aims to emphasize the profound societal impact of climate change.</p>', 'Visit Page', NULL, 'false', '2023-07-21 02:22:31', '2023-07-21 02:22:31'),
-(3, 'Green Welfare Indonesia', 'Head of Climate Education', '<p>Green Welfare Indonesia, a non-profit organization, connects youth-led climate solutions in the areas of food security, climate education, and sustainable agriculture. Established on May 3, 2020, the organization strives to make a positive social and environmental impact. Recognizing the power of small steps, Green Welfare Indonesia aims to engage and encourage young individuals to address eco-social issues, promote climate and environmental awareness, and foster meaningful change through initiatives and projects.</p>', NULL, NULL, 'false', '2023-07-21 02:22:44', '2023-07-21 02:22:44');
+(1, 'We The Genesis', 'Founder, Executive Director', '<p>Founded in 2020, We The Genesis is a Y2Y media organization dedicated to amplifying youth aspirations, stimulating young minds, and igniting youthful ambition with empathy. It serves as a voice for the younger generation, encouraging exploration of potential and contributing to positive change, by creating opportunities for engagement with diverse perspectives. Through its platform, We The Genesis provokes thought, inspires action, and cultivates empathy, empowering the youth to become active contributors to a more inclusive and informed society.</p>', 'Join We The Genesis', NULL, 'true', '2023-07-26 03:52:52', '2023-07-26 03:54:23'),
+(2, '‘Nothing On A Dead Planet’ Campaign', 'Initiator', '<p>Danya and a group of climate activists initiated The Nothing On A Dead Planet Campaign to address the detachment felt by Indonesians towards climate change. The campaign\'s primary objective is to demonstrate that every individual stands to lose something due to climate change, highlighting the impact on aspects of life like education, romance, wellness, and even yoga. By raising awareness and inspiring action, the campaign aims to emphasize the profound societal impact of climate change.</p>', 'Visit Page', 'https://www.instagram.com/nothingonadeadplanet/', 'true', '2023-07-26 03:53:46', '2023-07-26 03:54:27'),
+(3, 'Green Welfare Indonesia', 'Head of Climate Education', '<p>Green Welfare Indonesia, a non-profit organization, connects youth-led climate solutions in the areas of food security, climate education, and sustainable agriculture. Established on May 3, 2020, the organization strives to make a positive social and environmental impact. Recognizing the power of small steps, Green Welfare Indonesia aims to engage and encourage young individuals to address eco-social issues, promote climate and environmental awareness, and foster meaningful change through initiatives and projects.</p>', NULL, NULL, 'true', '2023-07-26 03:54:14', '2023-07-26 03:54:30');
 
 -- --------------------------------------------------------
 
@@ -193,6 +203,15 @@ CREATE TABLE `tb_speaking_opportunities` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tb_speaking_opportunities`
+--
+
+INSERT INTO `tb_speaking_opportunities` (`id`, `title`, `video_link`, `image`, `alt`, `description`, `is_highlight`, `created_at`, `updated_at`) VALUES
+(1, 'Climate Change for Teens', 'https://youtu.be/amamQuZqz4Y', NULL, 'Climate Change for Teens', '<p>Danya actively participated in the public educational project called Climate Change for Teens (CCFT), initiated by FPCI, where she also took part in the Foreign Policy for Teens Video Project to engage high school students aged 15-20 in climate issues, foreign policy, and world affairs. She had a conversation with Prof. Dr. Emil Salim, the First Minister of Environment in Indonesia, which was captured in one of the videos to enrich the educational content and provide valuable insights.</p>', 'true', '2023-07-26 04:11:00', '2023-07-31 08:55:27'),
+(2, 'AMSA', NULL, NULL, 'AMSA', '<p>Danya, as a speaker at AMSA\'s National Publication and Promotion Gathering 2023, highlighted the significance of targeting the right audience and understanding one\'s brand when sharing valuable content on social media. The presentation, delivered to over 100 participants from AMSA, aimed to equip them with essential marketing tips to effectively communicate information to their respective audiences.</p>', 'true', '2023-07-26 04:14:38', '2023-07-31 08:55:31'),
+(3, 'AIESEC', NULL, NULL, 'AIESEC', '<p>Danya was a speaker for AIESEC\'s \"Youth Connects\" event at Universitas Indonesia, where the theme \"Dare to Learn, Live to Lead\" was explored, sharing her leadership journey within We The Genesis, a platform she built, to a diverse audience of over 100 enthusiastic and passionate students.</p>', 'true', '2023-07-26 04:22:24', '2023-07-31 08:55:36');
 
 -- --------------------------------------------------------
 
@@ -312,7 +331,7 @@ ALTER TABLE `tb_admins`
 -- AUTO_INCREMENT for table `tb_award_achievements`
 --
 ALTER TABLE `tb_award_achievements`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tb_change_making_projects`
@@ -330,7 +349,7 @@ ALTER TABLE `tb_contact_with_me`
 -- AUTO_INCREMENT for table `tb_speaking_opportunities`
 --
 ALTER TABLE `tb_speaking_opportunities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
