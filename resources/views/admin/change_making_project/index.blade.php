@@ -73,7 +73,7 @@
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                 <form action="" method="POST" id="form_delete">
                     @csrf
-                    <button type="submit" id="" style="font-size: 13px; background: var(--danger);">Delete</button>
+                    <button type="submit" style="font-size: 13px; background: var(--danger);">Delete</button>
                 </form>
             </div>
         </div>

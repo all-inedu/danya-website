@@ -67,6 +67,14 @@
                     <span class="hide-menu">AUTH</span>
                 </li>
                 <li class="sidebar-item">
+                    <a class="sidebar-link" data-bs-toggle="modal" data-bs-target="#changePassword" style="cursor: pointer">
+                        <span>
+                            <i class="ti ti-key"></i>
+                        </span>
+                        <span class="hide-menu">Change Password</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
                     <a class="sidebar-link" aria-expanded="false" href="{{ route('admin.logout_handler') }}" onclick="event.preventDefault();document.getElementById('logoutForm').submit();">
                         <span>
                             <i class="ti ti-logout"></i>
