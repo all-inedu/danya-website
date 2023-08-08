@@ -20,12 +20,12 @@ class HomeController extends Controller
         // Get all Change making projects from database
         // Order by is highlight after date updated_at
         // And take 3 from top result
-        $changeMakingProjects = ChangeMakingProject::where('is_highlight', 'true')->orderBy('updated_at')->get();
+        $changeMakingProjects = ChangeMakingProject::where('is_highlight', 'true')->orderBy("end_date")->orderBy('updated_at')->get();
 
         // Get all Speaking Opportunities from database
         // Order by is highlight after date updated_at
         // and take 3 from top result
-        $speakingOpportunities = SpeakingOpportunities::where('is_highlight', 'true')->orderBy('updated_at')->get();
+        $speakingOpportunities = SpeakingOpportunities::where('is_highlight', 'true')->orderBy("event_date")->orderBy('updated_at')->get();
 
         // Get id video from given youtube link
         // and put in into video_link_id variable

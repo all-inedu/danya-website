@@ -52,12 +52,21 @@
                     @foreach ($change_making_projects as $item)
                         <li class="flex flex-col md:flex-row gap-x-4">
                             <div class="w-full">
-                                <h4 class="-mb-2 font-primary font-bold text-3xl text-primary lg:text-4xl lg:-mb-0">
+                                <h4 class="mb-2 font-primary font-bold text-3xl text-primary lg:text-4xl lg:-mb-0">
                                     {{ $item->organization_name }}
                                 </h4>
-                                <span class="font-secondary font-bold text-base text-grey lg:text-xl">
-                                    {{ $item->roles }}
-                                </span>
+                                <div class="mt-2">
+                                    <span class="font-secondary font-bold text-base text-grey lg:text-xl">
+                                        {{ $item->roles }}
+                                    </span>
+                                </div>
+                                @if ($item->end_date)
+                                    <div class="mt-3">
+                                        <span class="font-secondary text-grey text-base lg:text-xl">
+                                            {{ date("F Y", strtotime($item->end_date)) }}
+                                        </span>
+                                    </div>
+                                @endif
                             </div>
                             <div class="w-full mt-4 md:mt-0">
                                 <div class="mb-4 font-secondary font-medium text-sm text-dark lg:text-base">
@@ -175,7 +184,14 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="w-full">
+                                <div class="w-full flex flex-col justify-between">
+                                    @if ($item->event_date)
+                                        <div>
+                                            <span class="font-secondary text-grey text-base lg:text-xl">
+                                                {{ date("F Y", strtotime($item->event_date)) }}
+                                            </span>
+                                        </div>
+                                    @endif
                                     <div class="mb-4 font-secondary font-medium text-sm text-dark lg:text-base md:mb-0">
                                         {!! $item->description !!}
                                     </div>
@@ -197,7 +213,7 @@
                 <h2 class="mb-2 font-primary font-bold text-3xl text-primary text-center lg:text-4xl">
                     LEARN MORE ABOUT DANYA
                 </h2>
-                <a href="#" class="mx-auto px-4 py-2 font-secondary font-semibold text-lg text-light bg-primary">
+                <a href="{{ route('achievements') }}" class="mx-auto px-4 py-2 font-secondary font-semibold text-lg text-light bg-primary">
                     See Danya's Journey
                 </a>
             </div>

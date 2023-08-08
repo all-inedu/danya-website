@@ -16,10 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(HomeController::class)->group(function () {
-    Route::get('/', 'index');
+    Route::get('/', 'index')->name('home');
     Route::post('/contact-with-me', 'contact_with_me')->name('send_contact_with_me');
 });
 
 Route::controller(AchievementController::class)->group(function () {
-    Route::get('/achievements', 'index');
+    Route::get('/achievements', 'index')->name('achievements');
 });
