@@ -8,9 +8,6 @@
     <link rel="shortcut icon" type="image/png" href="{{ asset('images/profile/profile.png') }}" />
     <link rel="stylesheet" href="{{ asset('css/styles.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/admin/app.css') }}" />
-    @vite('public/css/styles.min.css')
-    @vite('public/css/admin/app.css')
-    </style>
 </head>
 <body class="login">
     <div class="container">
