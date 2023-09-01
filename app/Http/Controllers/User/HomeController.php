@@ -64,7 +64,7 @@ class HomeController extends Controller
             'email' => $validatedData['email'],
             'message_content' => $validatedData['message'],
         ];
-        $mailRecipient = "sjrnl27@gmail.com";
+        $mailRecipient = "tjokroardi.danya@gmail.com";
 
         DB::beginTransaction();
         try {

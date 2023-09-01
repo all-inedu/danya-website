@@ -1,6 +1,6 @@
  {{-- Start Footer --}}
  <footer id="contact">
-     <div class="py-10 bg-footer bg-right-top bg-cover font-secondary">
+     <div class="py-10 bg-footer bg-center bg-cover font-secondary">
          <div class="max-w-screen-lg mx-auto px-4 py-2 lg:pr-40 flex flex-col">
              <h1 class="font-primary font-bold text-4xl text-primary md:text-5xl lg:text-7xl">CONNECT WITH ME</h1>
              <div class="flex gap-x-4">
